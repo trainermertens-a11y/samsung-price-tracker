@@ -26,6 +26,13 @@ jobs:
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
+      - name: Check that samsung.com can be reached
+        run: |
+          echo "HTTP status from samsung.com/be:"
+          curl -s -o /tmp/samsung.html -w "%{http_code}\n" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0" https://www.samsung.com/be/smartphones/all-smartphones/ || true
+          echo "Size of HTML received:"; wc -c /tmp/samsung.html || true
+          echo "First 500 characters:"; head -c 500 /tmp/samsung.html || true
+
       - name: Scrape prices
         run: python scrape_prices.py
 
