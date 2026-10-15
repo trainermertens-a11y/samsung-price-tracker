@@ -36,8 +36,14 @@ def to_float(price_text: str) -> float | None:
 def scrape() -> list[dict]:
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto(URL, wait_until="networkidle", timeout=90_000)
+        context = browser.new_context(
+            user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
+            locale="nl-BE",
+        )
+        page = context.new_page()
+        # Wait for the HTML to load, not for "network idle" (Samsung's page never goes quiet).
+        page.goto(URL, wait_until="domcontentloaded", timeout=90_000)
 
         # Close the cookie / country popup if it appears.
         for label in ["Akkoord", "Accepteren", "Accept", "OK"]:
@@ -46,6 +52,15 @@ def scrape() -> list[dict]:
                 break
             except Exception:
                 pass
+
+        # Wait until product links appear (prices are loaded by JavaScript).
+        try:
+            page.wait_for_selector('a[href*="/smartphones/"]', timeout=60_000)
+        except Exception:
+            page.screenshot(path=str(OUT / "debug.png"), full_page=True)
+            browser.close()
+            raise SystemExit("Product links did not appear. Screenshot saved to docs/debug.png.")
+        page.wait_for_timeout(3_000)  # short pause so prices finish loading
 
         # Collect every link that points to a smartphone product page, with its visible text.
         cards = page.evaluate(
