@@ -3,9 +3,10 @@
 Daily price tracker for Samsung Belgium smartphones.
 
 1. Opens https://www.samsung.com/be/smartphones/all-smartphones/ in a headless browser
-   (the prices are loaded by JavaScript, so a plain HTTP request returns no prices).
-2. Extracts product name, price and link.
-3. Saves latest.json, appends to history.json and writes index.html for Chatbase.
+   (prices are loaded by JavaScript, so a plain HTTP request returns no prices).
+2. Reads the visible page text: each product name is followed by its price,
+   for example "Galaxy Z Fold8" then "1999,-".
+3. Matches each product to its link and saves latest.json, history.json and index.html.
 
 Run:  python3 scrape_prices.py
 """
@@ -20,17 +21,48 @@ URL = "https://www.samsung.com/be/smartphones/all-smartphones/"
 OUT = pathlib.Path(__file__).parent / "docs"  # GitHub Pages serves this folder
 OUT.mkdir(exist_ok=True)
 
-# Matches prices like "€ 1.099,00", "€899", "€ 699,-"
-PRICE_RE = re.compile(r"€\s?(\d{1,3}(?:\.\d{3})*(?:,\d{2}|,-)?|\d+(?:,\d{2})?)")
+# A price on its own line, e.g. "1999,-", "1.999,-", "€ 899,00"
+PRICE_LINE_RE = re.compile(r"^€?\s?(\d{1,3}(?:\.\d{3})+|\d+)(?:,\d{2}|,-)$")
 
 
 def to_float(price_text: str) -> float | None:
-    """Convert Belgian price text (1.099,00) to a number (1099.0)."""
-    t = price_text.replace(".", "").replace(",-", "").replace(",", ".")
+    """Convert Belgian price text (1.999,- or 1.099,00) to a number."""
+    t = price_text.replace("€", "").strip()
+    t = t.replace(".", "").replace(",-", "").replace(",", ".")
     try:
         return float(t)
     except ValueError:
         return None
+
+
+def find_url(name: str, links: list[str]) -> str:
+    """Find the product link whose path contains the product's name, e.g. /galaxy-z-fold8/."""
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    for href in links:
+        if f"/{slug}/" in href.lower() and "/smartphones/" in href.lower():
+            return href
+    return URL
+
+
+def parse_products(text: str, links: list[str]) -> list[dict]:
+    """Pair each price line with the most recent 'Galaxy ...' product name above it."""
+    items, current_name, seen = [], None, set()
+    for raw in text.splitlines():
+        line = raw.strip()
+        if line.startswith("Galaxy "):
+            current_name = line
+            continue
+        match = PRICE_LINE_RE.match(line)
+        if match and current_name and current_name not in seen:
+            seen.add(current_name)
+            price_text = "€ " + line.lstrip("€ ").strip()
+            items.append({
+                "name": current_name,
+                "price_text": price_text,
+                "price_eur": to_float(price_text),
+                "url": find_url(current_name, links),
+            })
+    return items
 
 
 def scrape() -> list[dict]:
@@ -42,7 +74,6 @@ def scrape() -> list[dict]:
             locale="nl-BE",
         )
         page = context.new_page()
-        # Wait for the HTML to load, not for "network idle" (Samsung's page never goes quiet).
         page.goto(URL, wait_until="domcontentloaded", timeout=90_000)
 
         # Close the cookie / country popup if it appears.
@@ -53,14 +84,12 @@ def scrape() -> list[dict]:
             except Exception:
                 pass
 
-        # Wait until product links appear (prices are loaded by JavaScript).
+        # Wait until at least one price (e.g. "1999,-") is on the page.
         try:
-            page.wait_for_selector('a[href*="/smartphones/"]', timeout=60_000)
+            page.wait_for_function(r"() => /\d{3,4},-/.test(document.body.innerText)", timeout=60_000)
         except Exception:
-            # Print what the browser actually saw, so the answer is in the run log.
             print("DEBUG final URL:", page.url)
             print("DEBUG page title:", page.title())
-            print("DEBUG number of links on page:", page.evaluate("() => document.querySelectorAll('a').length"))
             body_text = page.evaluate("() => (document.body ? document.body.innerText : '').slice(0, 1500)")
             print("DEBUG visible text (first 1500 characters):")
             print(body_text)
@@ -69,30 +98,23 @@ def scrape() -> list[dict]:
             except Exception as shot_error:
                 print("DEBUG screenshot failed:", shot_error)
             browser.close()
-            raise SystemExit("Product links did not appear. See DEBUG lines above.")
-        page.wait_for_timeout(3_000)  # short pause so prices finish loading
+            raise SystemExit("No prices found on the page. See DEBUG lines above.")
 
-        # Collect every link that points to a smartphone product page, with its visible text.
-        cards = page.evaluate(
-            """() => Array.from(document.querySelectorAll('a[href*="/smartphones/"]'))
-                     .map(a => ({href: a.href, text: (a.innerText || '').trim()}))"""
-        )
+        # The page shows a batch of products, then a "Bekijk meer" (show more) button.
+        # Click it until all products are loaded.
+        for _ in range(10):
+            more = page.get_by_role("button", name=re.compile("Bekijk meer"))
+            if more.count() == 0 or not more.first.is_visible():
+                break
+            more.first.click()
+            page.wait_for_timeout(2_500)
+
+        page.wait_for_timeout(2_000)  # short pause so all cards finish rendering
+        text = page.evaluate("() => document.body.innerText")
+        links = page.evaluate("() => Array.from(document.querySelectorAll('a[href]')).map(a => a.href)")
         browser.close()
 
-    items, seen = [], set()
-    for card in cards:
-        match = PRICE_RE.search(card["text"])
-        if not match or card["href"] in seen:
-            continue
-        seen.add(card["href"])
-        name = card["text"].splitlines()[0].strip()
-        items.append({
-            "name": name,
-            "price_text": "€ " + match.group(1),
-            "price_eur": to_float(match.group(1)),
-            "url": card["href"],
-        })
-    return items
+    return parse_products(text, links)
 
 
 def save(items: list[dict]) -> None:
@@ -128,6 +150,8 @@ Checkout prices may differ. Always confirm on samsung.com/be.</p>
 if __name__ == "__main__":
     products = scrape()
     if not products:
-        raise SystemExit("No prices found. The page layout may have changed; check the selectors in scrape().")
+        raise SystemExit("No products could be read from the page. Check parse_products().")
     save(products)
     print(f"Saved {len(products)} products to {OUT}")
+    for p in products:
+        print(f"  {p['name']}: {p['price_text']}")
