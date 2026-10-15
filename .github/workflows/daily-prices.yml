@@ -1,4 +1,4 @@
-name: Daily Samsung BE price update
+name: Daily Samsung BENELUX price update
 
 on:
   schedule:
