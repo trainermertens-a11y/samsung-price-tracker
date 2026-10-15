@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Daily price tracker for Samsung Belgium smartphones.
+Daily price tracker for Samsung Benelux smartphones.
 
 1. Opens https://www.samsung.com/be/smartphones/all-smartphones/ in a headless browser
    (prices are loaded by JavaScript, so a plain HTTP request returns no prices).
@@ -135,11 +135,11 @@ def save(items: list[dict]) -> None:
     )
     (OUT / "index.html").write_text(f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>Samsung Belgium smartphone prices</title>
+<title>Samsung Benelux smartphone prices</title>
 <style>body{{font-family:Arial,sans-serif;max-width:800px;margin:2rem auto}}
 table{{border-collapse:collapse;width:100%}}td,th{{border-bottom:1px solid #ddd;padding:.5rem;text-align:left}}</style>
 </head><body>
-<h1>Samsung smartphone prices - Belgium</h1>
+<h1>Samsung smartphone prices - Benelux</h1>
 <p>Prices as shown on <a href="{URL}">samsung.com/be</a> on <strong>{today}</strong>.
 Checkout prices may differ. Always confirm on samsung.com/be.</p>
 <table><tr><th>Product</th><th>Price</th><th>Link</th></tr>
