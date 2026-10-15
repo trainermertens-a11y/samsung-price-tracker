@@ -1,0 +1,38 @@
+name: Daily Samsung BE price update
+
+on:
+  schedule:
+    # Runs every day at 05:00 UTC (06:00 in winter, 07:00 in summer in Belgium)
+    - cron: "0 5 * * *"
+  workflow_dispatch:   # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write      # needed so the workflow can commit the updated files
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Scrape prices
+        run: python scrape_prices.py
+
+      - name: Commit updated prices
+        run: |
+          git config user.name "price-bot"
+          git config user.email "price-bot@users.noreply.github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "Update prices $(date -u +%F)"
+          git push
