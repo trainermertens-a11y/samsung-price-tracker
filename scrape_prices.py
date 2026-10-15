@@ -57,9 +57,19 @@ def scrape() -> list[dict]:
         try:
             page.wait_for_selector('a[href*="/smartphones/"]', timeout=60_000)
         except Exception:
-            page.screenshot(path=str(OUT / "debug.png"), full_page=True)
+            # Print what the browser actually saw, so the answer is in the run log.
+            print("DEBUG final URL:", page.url)
+            print("DEBUG page title:", page.title())
+            print("DEBUG number of links on page:", page.evaluate("() => document.querySelectorAll('a').length"))
+            body_text = page.evaluate("() => (document.body ? document.body.innerText : '').slice(0, 1500)")
+            print("DEBUG visible text (first 1500 characters):")
+            print(body_text)
+            try:
+                page.screenshot(path=str(OUT / "debug.png"), full_page=True)
+            except Exception as shot_error:
+                print("DEBUG screenshot failed:", shot_error)
             browser.close()
-            raise SystemExit("Product links did not appear. Screenshot saved to docs/debug.png.")
+            raise SystemExit("Product links did not appear. See DEBUG lines above.")
         page.wait_for_timeout(3_000)  # short pause so prices finish loading
 
         # Collect every link that points to a smartphone product page, with its visible text.
