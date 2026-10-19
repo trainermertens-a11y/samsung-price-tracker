@@ -1,90 +1,117 @@
 {
   "date": "2026-10-19",
-  "source": "https://www.samsung.com/be/smartphones/all-smartphones/",
+  "sources": {
+    "Smartphone": "https://www.samsung.com/be/smartphones/all-smartphones/",
+    "Tablet": "https://www.samsung.com/be/tablets/all-tablets/",
+    "Watch": "https://www.samsung.com/be/watches/all-watches/",
+    "Buds": "https://www.samsung.com/be/audio/all-audio/",
+    "Galaxy Book": "https://www.samsung.com/be/computers/all-computers/"
+  },
   "products": [
     {
+      "name": "Galaxy Book6 (14\", Core 5, 16GB)",
+      "category": "Galaxy Book",
+      "price_text": "€ 1199,-",
+      "price_eur": 1199.0,
+      "url": "https://www.samsung.com/be/computers/all-computers/"
+    },
+    {
+      "name": "Galaxy Book6 (16\", Ultra 7, 16GB), Copilot+PC",
+      "category": "Galaxy Book",
+      "price_text": "€ 1349,-",
+      "price_eur": 1349.0,
+      "url": "https://www.samsung.com/be/computers/all-computers/"
+    },
+    {
+      "name": "Galaxy Book6 Pro (16\", Ultra 5, 16GB), Copilot+PC",
+      "category": "Galaxy Book",
+      "price_text": "€ 1999,-",
+      "price_eur": 1999.0,
+      "url": "https://www.samsung.com/be/computers/all-computers/"
+    },
+    {
+      "name": "Galaxy Book6 Pro (16\", Ultra 5, 32GB), Copilot+PC",
+      "category": "Galaxy Book",
+      "price_text": "€ 2699,-",
+      "price_eur": 2699.0,
+      "url": "https://www.samsung.com/be/computers/all-computers/"
+    },
+    {
+      "name": "Galaxy A17 5G",
+      "category": "Smartphone",
+      "price_text": "€ 299,-",
+      "price_eur": 299.0,
+      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+    },
+    {
+      "name": "Galaxy A18 LTE",
+      "category": "Smartphone",
+      "price_text": "€ 269,-",
+      "price_eur": 269.0,
+      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+    },
+    {
+      "name": "Galaxy A27 5G",
+      "category": "Smartphone",
+      "price_text": "€ 379,-",
+      "price_eur": 379.0,
+      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+    },
+    {
+      "name": "Galaxy A37 5G",
+      "category": "Smartphone",
+      "price_text": "€ 589,-",
+      "price_eur": 589.0,
+      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+    },
+    {
+      "name": "Galaxy A57 5G",
+      "category": "Smartphone",
+      "price_text": "€ 659,-",
+      "price_eur": 659.0,
+      "url": "https://www.samsung.com/be/smartphones/galaxy-a/galaxy-a57-5g/buy/"
+    },
+    {
+      "name": "Galaxy S25",
+      "category": "Smartphone",
+      "price_text": "€ 899,-",
+      "price_eur": 899.0,
+      "url": "https://www.samsung.com/be/smartphones/galaxy-s25/"
+    },
+    {
+      "name": "Galaxy S25 Edge",
+      "category": "Smartphone",
+      "price_text": "€ 999,-",
+      "price_eur": 999.0,
+      "url": "https://www.samsung.com/be/smartphones/galaxy-s25-edge/"
+    },
+    {
+      "name": "Galaxy S25 FE",
+      "category": "Smartphone",
+      "price_text": "€ 849,-",
+      "price_eur": 849.0,
+      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+    },
+    {
+      "name": "Galaxy S26 Ultra",
+      "category": "Smartphone",
+      "price_text": "€ 1749,-",
+      "price_eur": 1749.0,
+      "url": "https://www.samsung.com/be/smartphones/galaxy-s26-ultra/buy/"
+    },
+    {
       "name": "Galaxy Z Fold8",
+      "category": "Smartphone",
       "price_text": "€ 1999,-",
       "price_eur": 1999.0,
       "url": "https://www.samsung.com/be/smartphones/galaxy-z-fold8/buy/"
     },
     {
       "name": "Galaxy Z Fold8 Ultra",
+      "category": "Smartphone",
       "price_text": "€ 2199,-",
       "price_eur": 2199.0,
       "url": "https://www.samsung.com/be/smartphones/galaxy-z-fold8-ultra/buy/"
-    },
-    {
-      "name": "Galaxy S26 Ultra",
-      "price_text": "€ 1749,-",
-      "price_eur": 1749.0,
-      "url": "https://www.samsung.com/be/smartphones/galaxy-s26-ultra/buy/"
-    },
-    {
-      "name": "Galaxy S26",
-      "price_text": "€ 1299,-",
-      "price_eur": 1299.0,
-      "url": "https://www.samsung.com/be/smartphones/galaxy-s26/buy/"
-    },
-    {
-      "name": "Galaxy A18 LTE",
-      "price_text": "€ 269,-",
-      "price_eur": 269.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy A57 5G",
-      "price_text": "€ 659,-",
-      "price_eur": 659.0,
-      "url": "https://www.samsung.com/be/smartphones/galaxy-a/galaxy-a57-5g/buy/"
-    },
-    {
-      "name": "Galaxy S26+",
-      "price_text": "€ 1549,-",
-      "price_eur": 1549.0,
-      "url": "https://www.samsung.com/be/smartphones/galaxy-s26/buy/"
-    },
-    {
-      "name": "Galaxy Z Flip8",
-      "price_text": "€ 1299,-",
-      "price_eur": 1299.0,
-      "url": "https://www.samsung.com/be/smartphones/galaxy-z-flip8/"
-    },
-    {
-      "name": "Galaxy A37 5G",
-      "price_text": "€ 589,-",
-      "price_eur": 589.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy S25",
-      "price_text": "€ 899,-",
-      "price_eur": 899.0,
-      "url": "https://www.samsung.com/be/smartphones/galaxy-s25/"
-    },
-    {
-      "name": "Galaxy A27 5G",
-      "price_text": "€ 379,-",
-      "price_eur": 379.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy A17 5G",
-      "price_text": "€ 299,-",
-      "price_eur": 299.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy S25 FE",
-      "price_text": "€ 849,-",
-      "price_eur": 849.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy S25 Edge",
-      "price_text": "€ 999,-",
-      "price_eur": 999.0,
-      "url": "https://www.samsung.com/be/smartphones/galaxy-s25-edge/"
     }
   ]
 }
