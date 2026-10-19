@@ -50,7 +50,12 @@ def parse_products(text: str, links: list[str]) -> list[dict]:
     for raw in text.splitlines():
         line = raw.strip()
         if line.startswith("Galaxy "):
-            current_name = line
+            current_name = re.sub(
+                r"\s*\(Online Exclusive\)\s*$",
+                "",
+                line,
+                flags=re.IGNORECASE,
+            ).strip()
             continue
         match = PRICE_LINE_RE.match(line)
         if match and current_name and current_name not in seen:
