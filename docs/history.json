@@ -468,107 +468,296 @@
       {
         "name": "Galaxy Book6 (14\", Core 5, 16GB)",
         "category": "Galaxy Book",
-        "price_text": "€ 1199,-",
+        "price_text": "€ 1.199,00",
         "price_eur": 1199.0,
         "url": "https://www.samsung.com/be/computers/all-computers/"
       },
       {
         "name": "Galaxy Book6 (16\", Ultra 7, 16GB), Copilot+PC",
         "category": "Galaxy Book",
-        "price_text": "€ 1349,-",
+        "price_text": "€ 1.349,00",
         "price_eur": 1349.0,
         "url": "https://www.samsung.com/be/computers/all-computers/"
       },
       {
         "name": "Galaxy Book6 Pro (16\", Ultra 5, 16GB), Copilot+PC",
         "category": "Galaxy Book",
-        "price_text": "€ 1999,-",
+        "price_text": "€ 1.999,00",
         "price_eur": 1999.0,
         "url": "https://www.samsung.com/be/computers/all-computers/"
       },
       {
         "name": "Galaxy Book6 Pro (16\", Ultra 5, 32GB), Copilot+PC",
         "category": "Galaxy Book",
-        "price_text": "€ 2699,-",
+        "price_text": "€ 2.699,00",
         "price_eur": 2699.0,
         "url": "https://www.samsung.com/be/computers/all-computers/"
       },
       {
         "name": "Galaxy A17 5G",
         "category": "Smartphone",
-        "price_text": "€ 299,-",
+        "price_text": "€ 299,00",
         "price_eur": 299.0,
         "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
       },
       {
         "name": "Galaxy A18 LTE",
         "category": "Smartphone",
-        "price_text": "€ 269,-",
+        "price_text": "€ 269,00",
         "price_eur": 269.0,
         "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
       },
       {
         "name": "Galaxy A27 5G",
         "category": "Smartphone",
-        "price_text": "€ 379,-",
+        "price_text": "€ 379,00",
         "price_eur": 379.0,
         "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
       },
       {
         "name": "Galaxy A37 5G",
         "category": "Smartphone",
-        "price_text": "€ 589,-",
+        "price_text": "€ 589,00",
         "price_eur": 589.0,
         "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
       },
       {
         "name": "Galaxy A57 5G",
         "category": "Smartphone",
-        "price_text": "€ 659,-",
+        "price_text": "€ 659,00",
         "price_eur": 659.0,
         "url": "https://www.samsung.com/be/smartphones/galaxy-a/galaxy-a57-5g/buy/"
       },
       {
         "name": "Galaxy S25",
         "category": "Smartphone",
-        "price_text": "€ 899,-",
+        "price_text": "€ 899,00",
         "price_eur": 899.0,
         "url": "https://www.samsung.com/be/smartphones/galaxy-s25/"
       },
       {
         "name": "Galaxy S25 Edge",
         "category": "Smartphone",
-        "price_text": "€ 999,-",
+        "price_text": "€ 999,00",
         "price_eur": 999.0,
         "url": "https://www.samsung.com/be/smartphones/galaxy-s25-edge/"
       },
       {
         "name": "Galaxy S25 FE",
         "category": "Smartphone",
-        "price_text": "€ 849,-",
+        "price_text": "€ 849,00",
         "price_eur": 849.0,
         "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
       },
       {
+        "name": "Galaxy S26",
+        "category": "Smartphone",
+        "price_text": "€ 1.299,00",
+        "price_eur": 1299.0,
+        "url": "https://www.samsung.com/be/smartphones/galaxy-s26/buy/"
+      },
+      {
         "name": "Galaxy S26 Ultra",
         "category": "Smartphone",
-        "price_text": "€ 1749,-",
+        "price_text": "€ 1.749,00",
         "price_eur": 1749.0,
         "url": "https://www.samsung.com/be/smartphones/galaxy-s26-ultra/buy/"
       },
       {
+        "name": "Galaxy S26+",
+        "category": "Smartphone",
+        "price_text": "€ 1.549,00",
+        "price_eur": 1549.0,
+        "url": "https://www.samsung.com/be/smartphones/galaxy-s26/buy/"
+      },
+      {
+        "name": "Galaxy Z Flip8",
+        "category": "Smartphone",
+        "price_text": "€ 1.299,00",
+        "price_eur": 1299.0,
+        "url": "https://www.samsung.com/be/smartphones/galaxy-z-flip8/"
+      },
+      {
         "name": "Galaxy Z Fold8",
         "category": "Smartphone",
-        "price_text": "€ 1999,-",
+        "price_text": "€ 1.999,00",
         "price_eur": 1999.0,
         "url": "https://www.samsung.com/be/smartphones/galaxy-z-fold8/buy/"
       },
       {
         "name": "Galaxy Z Fold8 Ultra",
         "category": "Smartphone",
-        "price_text": "€ 2199,-",
+        "price_text": "€ 2.199,00",
         "price_eur": 2199.0,
         "url": "https://www.samsung.com/be/smartphones/galaxy-z-fold8-ultra/buy/"
+      },
+      {
+        "name": "Galaxy Tab A11 (LTE, 8.7'')",
+        "category": "Tablet",
+        "price_text": "€ 239,00",
+        "price_eur": 239.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab A11 (Wi-Fi, 8.7'')",
+        "category": "Tablet",
+        "price_text": "€ 199,00",
+        "price_eur": 199.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab A11+ (Wi-Fi, 11.0'')",
+        "category": "Tablet",
+        "price_text": "€ 409,00",
+        "price_eur": 409.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab A11+ 5G (11.0'')",
+        "category": "Tablet",
+        "price_text": "€ 459,00",
+        "price_eur": 459.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S10 FE (Wi-Fi, 10.9'')",
+        "category": "Tablet",
+        "price_text": "€ 629,00",
+        "price_eur": 629.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S10 FE 5G (10.9'')",
+        "category": "Tablet",
+        "price_text": "€ 729,00",
+        "price_eur": 729.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S10 FE+ (Wi-Fi, 13.1'')",
+        "category": "Tablet",
+        "price_text": "€ 799,00",
+        "price_eur": 799.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S10 FE+ 5G (13.1'')",
+        "category": "Tablet",
+        "price_text": "€ 899,00",
+        "price_eur": 899.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S10 Lite (Wi-Fi, 10.9'')",
+        "category": "Tablet",
+        "price_text": "€ 539,00",
+        "price_eur": 539.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S10 Lite 5G (10.9'')",
+        "category": "Tablet",
+        "price_text": "€ 599,00",
+        "price_eur": 599.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S11 (Wi-Fi, 11'')",
+        "category": "Tablet",
+        "price_text": "€ 1.099,00",
+        "price_eur": 1099.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S11 5G (11'')",
+        "category": "Tablet",
+        "price_text": "€ 1.249,00",
+        "price_eur": 1249.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S11 Ultra (Wi-Fi, 14.6'')",
+        "category": "Tablet",
+        "price_text": "€ 2.039,00",
+        "price_eur": 2039.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S11 Ultra 5G (14.6'')",
+        "category": "Tablet",
+        "price_text": "€ 1.589,00",
+        "price_eur": 1589.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S12 Ultra (Wi-Fi, 14.6\")",
+        "category": "Tablet",
+        "price_text": "€ 1.539,00",
+        "price_eur": 1539.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S12 Ultra 5G (14.6\")",
+        "category": "Tablet",
+        "price_text": "€ 1.689,00",
+        "price_eur": 1689.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S12+ (Wi-Fi, 12.6\")",
+        "category": "Tablet",
+        "price_text": "€ 1.299,00",
+        "price_eur": 1299.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Tab S12+ 5G (12.6\")",
+        "category": "Tablet",
+        "price_text": "€ 1.449,00",
+        "price_eur": 1449.0,
+        "url": "https://www.samsung.com/be/tablets/all-tablets/"
+      },
+      {
+        "name": "Galaxy Watch Ultra2",
+        "category": "Watch",
+        "price_text": "€ 749,00",
+        "price_eur": 749.0,
+        "url": "https://www.samsung.com/be/watches/galaxy-watch-ultra2/buy/"
+      },
+      {
+        "name": "Galaxy Watch8 (Bluetooth, 40 mm)",
+        "category": "Watch",
+        "price_text": "€ 329,00",
+        "price_eur": 329.0,
+        "url": "https://www.samsung.com/be/watches/all-watches/"
+      },
+      {
+        "name": "Galaxy Watch8 (Bluetooth, 44 mm)",
+        "category": "Watch",
+        "price_text": "€ 359,00",
+        "price_eur": 359.0,
+        "url": "https://www.samsung.com/be/watches/all-watches/"
+      },
+      {
+        "name": "Galaxy Watch8 (LTE, 40 mm)",
+        "category": "Watch",
+        "price_text": "€ 379,00",
+        "price_eur": 379.0,
+        "url": "https://www.samsung.com/be/watches/all-watches/"
+      },
+      {
+        "name": "Galaxy Watch9 (Bluetooth, 40mm)",
+        "category": "Watch",
+        "price_text": "€ 409,00",
+        "price_eur": 409.0,
+        "url": "https://www.samsung.com/be/watches/all-watches/"
+      },
+      {
+        "name": "Galaxy Watch9 (Bluetooth, 44mm)",
+        "category": "Watch",
+        "price_text": "€ 439,00",
+        "price_eur": 439.0,
+        "url": "https://www.samsung.com/be/watches/all-watches/"
       }
     ]
   }
