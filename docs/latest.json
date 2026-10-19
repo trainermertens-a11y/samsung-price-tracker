@@ -21,28 +21,10 @@
       "url": "https://www.samsung.com/be/smartphones/galaxy-s26-ultra/buy/"
     },
     {
-      "name": "Galaxy Z Fold8 (Online Exclusive)",
-      "price_text": "€ 1999,-",
-      "price_eur": 1999.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy Z Fold8 Ultra (Online Exclusive)",
-      "price_text": "€ 2199,-",
-      "price_eur": 2199.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy S26 Ultra (Online Exclusive)",
-      "price_text": "€ 1749,-",
-      "price_eur": 1749.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
-    },
-    {
-      "name": "Galaxy S26 (Online Exclusive)",
+      "name": "Galaxy S26",
       "price_text": "€ 1299,-",
       "price_eur": 1299.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+      "url": "https://www.samsung.com/be/smartphones/galaxy-s26/buy/"
     },
     {
       "name": "Galaxy A18 LTE",
@@ -57,16 +39,16 @@
       "url": "https://www.samsung.com/be/smartphones/galaxy-a/galaxy-a57-5g/buy/"
     },
     {
-      "name": "Galaxy S26+ (Online Exclusive)",
+      "name": "Galaxy S26+",
       "price_text": "€ 1549,-",
       "price_eur": 1549.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+      "url": "https://www.samsung.com/be/smartphones/galaxy-s26/buy/"
     },
     {
-      "name": "Galaxy Z Flip8 (Online Exclusive)",
+      "name": "Galaxy Z Flip8",
       "price_text": "€ 1299,-",
       "price_eur": 1299.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
+      "url": "https://www.samsung.com/be/smartphones/galaxy-z-flip8/"
     },
     {
       "name": "Galaxy A37 5G",
@@ -79,12 +61,6 @@
       "price_text": "€ 899,-",
       "price_eur": 899.0,
       "url": "https://www.samsung.com/be/smartphones/galaxy-s25/"
-    },
-    {
-      "name": "Galaxy S25 (Online Exclusive)",
-      "price_text": "€ 899,-",
-      "price_eur": 899.0,
-      "url": "https://www.samsung.com/be/smartphones/all-smartphones/"
     },
     {
       "name": "Galaxy A27 5G",
